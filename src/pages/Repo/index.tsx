@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import {
   Container,
@@ -18,14 +19,14 @@ const Repo: React.FC = () => {
       <Breadcrumb>
         <RepoIcon />
 
-        <Link className={'username'} to={`/${username}`}>
-          {username}
+        <Link className={'username'} to={`/LiomarRenner`}>
+          Liomar Renner
         </Link>
 
         <span>/</span>
 
-        <Link className={'reponame'} to={`/${username}/${reponame}`}>
-          {reponame}
+        <Link className={'reponame'} to={`/LiomarRenner/github-clone`}>
+          github-clone
         </Link>
       </Breadcrumb>
 
