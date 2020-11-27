@@ -26,8 +26,8 @@ const RepoCard: React.FC<Props> = ({
   stars,
   forks,
 }) => {
-  // eslint-disable-next-line  
-  const languageClass = language ? language.toLowerCase() : 'other';
+  
+  const languageClass = language ? language.toString().toLowerCase() : 'other';
 
   return ( 
   <Container>
