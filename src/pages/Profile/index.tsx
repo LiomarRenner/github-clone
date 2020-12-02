@@ -1,5 +1,5 @@
 import React, { useEffect} from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
 
 
 import { Container, Main, LeftSide, RightSide, Repos, CalendarHeading, RepoIcon, Tab, } from './styles';
@@ -9,6 +9,14 @@ import RandomCalendar from '../../components/RandomCalendar';
 
 
 const Profile: React.FC = () => {
+  const { username = 'LiomarRenner'} = useParams();
+
+  useEffect(() => {
+    Promise.all([
+      fetch('https://api.github.com/users/${username}'),
+      fetch('https://api.github.com/users/${username}/repos')
+    ])
+  }, []);
 
   const TabContent = () => (
     <div className="content">
