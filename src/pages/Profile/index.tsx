@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 
 
@@ -6,17 +6,24 @@ import { Container, Main, LeftSide, RightSide, Repos, CalendarHeading, RepoIcon,
 import ProfileData from '../../components/ProfileData'
 import RepoCard from '../../components/RepoCard';
 import RandomCalendar from '../../components/RandomCalendar';
+import { APIUser } from '../../@types';
 
+interface Data {
+  user?: APIUser;
+}
 
 const Profile: React.FC = () => {
-  const { username = 'LiomarRenner'} = useParams();
+  //const { username = 'LiomarRenner'} = useParams();
+  const [data, setData] = useState<Data>;
 
   useEffect(() => {
     Promise.all([
-      fetch('https://api.github.com/users/${username}'),
-      fetch('https://api.github.com/users/${username}/repos')
-    ])
-  }, []);
+      //fetch('https://api.github.com/users/${username}'),
+      //fetch('https://api.github.com/users/${username}/repos')
+    ]).then(async (responses) => {
+
+    });
+  }, [username]);
 
   const TabContent = () => (
     <div className="content">
