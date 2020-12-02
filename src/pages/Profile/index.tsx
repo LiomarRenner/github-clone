@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect} from 'react';
+import { useParams } from 'react-router-dom'
+
 
 import { Container, Main, LeftSide, RightSide, Repos, CalendarHeading, RepoIcon, Tab, } from './styles';
 import ProfileData from '../../components/ProfileData'
@@ -29,13 +31,13 @@ const Profile: React.FC = () => {
       <Main>
         <LeftSide>
           <ProfileData
-            username={'guilhermerodz'}
-            name={'Guillerme Rodz'}
-            avatarUrl={'https://avatars3.githubusercontent.com/u/10366880?v=4'}
+            username={'LiomarRenner'}
+            name={'Liomar Renner'}
+            avatarUrl={'https://avatars2.githubusercontent.com/u/68114557?s=460&u=aab39bd1d69ea2986019c88e9f0a47685c038a91&v=4'}
             followers={887}
             following={7}
-            company={'Rocketseat'}
-            location={'São Paulo, Brazil'}
+            company={'UFC'}
+            location={'Ceará, Brazil'}
             email={'liomarrenner@gmail.com'}
             blog={undefined}
 
@@ -53,7 +55,7 @@ const Profile: React.FC = () => {
               {[1, 2, 3, 4, 5, 6].map(n =>(
                 <RepoCard
                   key={n}
-                  username={'guilhermerodz'}
+                  username={'LiomarRenner'}
                   reponame={'youtube-content'}
                   description={'Contains all of my Youtube Videos'}
                   language={n}
