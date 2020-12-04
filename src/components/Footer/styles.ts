@@ -7,6 +7,6 @@ export const Container = styled.div`
 export const Line = styled.div`
   
 `;
-export const Githublogo = styled(Fagithub)`
+export const Githublogo = styled(FaGithub)`
   fill: var(--border);
 `;
