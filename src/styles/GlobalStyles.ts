@@ -28,8 +28,11 @@ export default createGlobalStyle`
 
       let append = '';
       Object.entries(theme).forEach(([prop, value]) => {
-
+        append += `--${prop}: ${value};`; 
       })
+
+      return append; 
+
     }}
   }
 `;

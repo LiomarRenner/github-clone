@@ -8,8 +8,9 @@ import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header';
 import Profile from './pages/Profile';
 import Repo from './pages/Repo';
-import Footer from './components/Footer'
-import { ThemeName } from './styles/themes';
+import Footer from './components/Footer';
+
+import { ThemeName, themes } from './styles/themes';
 
 function App() {
   const [themeName, setThemeName] = useState<ThemeName>('light');
@@ -18,7 +19,7 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme}>
     <BrowserRouter >
-      <Header />
+      <Header themeName={themeName} setThemeName={setThemeName} />
         
       <Routes>
         <Route path="/" element={<Profile />} />
@@ -30,6 +31,7 @@ function App() {
 
       <GlobalStyles />
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
