@@ -4,16 +4,16 @@ import { subYears, isBefore, isSameDay, addDays } from 'date-fns';
 
 import { Container } from './styles';
 
-type HeatmapValue = {date: Date; count: number};
+type HeatmapValue = { date: Date; count: number };
 
-const RandomCalendar: React.FC = ()=>  {
+const RandomCalendar: React.FC = () => {
   const startDate = subYears(new Date(), 1);
   const endDate = new Date();
-  
+
   return (
     <Container>
-      <div className='wrapper'>
-        <Heatmap 
+      <div className="wrapper">
+        <Heatmap
           startDate={startDate}
           endDate={endDate}
           values={generateHeatmapValues(startDate, endDate)}
@@ -26,18 +26,17 @@ const RandomCalendar: React.FC = ()=>  {
               clampedCount = Math.min(item.count, 4);
             }
 
-            return`scale-${clampedCount}`
+            return `scale-${clampedCount}`;
           }}
           showWeekdayLabels
         />
       </div>
-      <span>
-        Random calendar do not represent actual data
-      </span>
-    </Container>
 
+      <span>Random calendar (do not represent actual data)</span>
+    </Container>
   );
-}
+};
+
 const generateHeatmapValues = (startDate: Date, endDate: Date) => {
   const values: HeatmapValue[] = [];
 
