@@ -1,12 +1,13 @@
 import React from 'react';
-import { Container, Line, Githublogo } from './styles';
+
+import { Container, Line, GithubLogo } from './styles';
 
 const Footer: React.FC = () => {
   return (
-  <Container>
+    <Container>
       <Line />
-      <Githublogo />
-  </Container>
+      <GithubLogo />
+    </Container>
   );
 };
 
