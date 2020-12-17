@@ -1,7 +1,8 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { Container, GithubLogo, SearchForm } from './styles';
+
 import { ThemeName } from '../../styles/themes';
 
 interface Props {
