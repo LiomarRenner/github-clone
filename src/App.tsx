@@ -1,7 +1,7 @@
 import 'react-calendar-heatmap/dist/styles.css';
-// @ts-ignore
+
 import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from './styles/GlobalStyles';
@@ -18,19 +18,19 @@ function App() {
 
   return (
     <ThemeProvider theme={currentTheme}>
-    <BrowserRouter >
-      <Header themeName={themeName} setThemeName={setThemeName} />
-        
-      <Routes>
-        <Route path="/" element={<Profile />} />
-        <Route path="/:username" element={<Profile />} />
-        <Route path="/:username/:reponame" element={<Repo/>} />  
-      </Routes>
+      <BrowserRouter>
+        <Header themeName={themeName} setThemeName={setThemeName} />
 
-      < Footer/>
+        <Routes>
+          <Route path="/" element={<Profile />} />
+          <Route path="/:username" element={<Profile />} />
+          <Route path="/:username/:reponame" element={<Repo />} />
+        </Routes>
 
-      <GlobalStyles />
-    </BrowserRouter>
+        <Footer />
+
+        <GlobalStyles />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
